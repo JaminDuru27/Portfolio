@@ -1,0 +1,23 @@
+@font-face {
+    font-family: geoform;
+    src: url(/geoform/Geoform-Light.otf);
+}
+@font-face {
+    font-family: geoformbold;
+    src: url(/geoform/Geoform-ExtraBold.otf);
+}
+@font-face {
+    font-family: logofont;
+    src: url(/babang/Babang.otf);
+}
+*{
+    font-family: geoform
+}
+.boldfont{
+    font-family: geoformbold
+}
+.logo{
+    font-family: logofont
+}
+@import "tailwindcss";
+
