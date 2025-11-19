@@ -10,8 +10,10 @@ import { ImageCard2 } from "../components/imhcard2"
 import { ImageCard3 } from "../components/imagecard3"
 import { useState } from "react"
 import { Nav } from "../components/nav";
+import { useNavigate } from "react-router-dom";
 export function Home({theme, setTheme}){
     let [togglesidebar, settogglesidebar] = useState(false)
+    const nav = useNavigate()
     return (
         <div className={`p-4 w-full text-[1rem] md:text-[120%] h-screen ${theme===`light`?`text-black`:`text-white`} overflow-auto`}>
         <SideNav theme={theme} toggle={togglesidebar} settoggle={settogglesidebar}/>          
@@ -39,17 +41,22 @@ export function Home({theme, setTheme}){
                     Im a a profession webdeveloper and game developer. I can create Modern UIs and Web Pages with the latest Web Frameworks
                 </div>
                 <div className="links text-[.6rem] w-[50%]  h-10 my-5  flex justify-between items-center">
-                    <MdOutlineEmail
-                    size={20}
-                    color={theme === `dark`?`white`:"black"}
-                    className="cursor-pointer"
-                    />
-                    <RiGithubLine
-                    size={20}
-                    color={theme === `dark`?`white`:"black"}
-                    className="cursor-pointer"
-                    />
+                    <a href="mailto:durugermaine207@gmail.com">
+                        <MdOutlineEmail
+                        size={20}
+                        color={theme === `dark`?`white`:"black"}
+                        className="cursor-pointer"
+                        />
+                    </a>
+                    <a href="https://github.com/JaminDuru27">
+                        <RiGithubLine
+                        size={20}
+                        color={theme === `dark`?`white`:"black"}
+                        className="cursor-pointer"
+                        />
+                    </a>
                     <FaWhatsapp
+                    onClick={()=>{}}
                     size={20}
                     color={theme === `dark`?`white`:"black"}
                     className="cursor-pointer"
@@ -148,10 +155,10 @@ export function Home({theme, setTheme}){
         <footer className="flex flex-col sm:flex-row sm:justify-between items-center justify-start w-full my-2 py-10 px-5">
             <div className="logo text-[1.5rem] sm:text-[1.7rem] md:text-[2.4rem]">Jamin Dev</div>
             <div className="text-[.7rem] mt-5 flex sm:items-end sm:text-[.8rem] md:text-[1.1rem] flex-col justify-between items-center">
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Contact</a>
-                <a href="">Works</a>
+                <div className ='cursor-pointer' onClick={()=>{nav(`/`)}}>Home</div>
+                <div className ='cursor-pointer' onClick={()=>{nav(`/About`)}}>About</div>
+                <div className ='cursor-pointer' onClick={()=>{nav(`/Contact`)}}>Contact</div>
+                <div className ='cursor-pointer' onClick={()=>{nav(`/Services`)}}>Services</div>
             </div>
             <div className=" absolute left-0 bottom-0  w-full text-center text-[.5rem] text-[#ffffff84] capitalize mt-10">A reliable and efficient web builder</div>
         </footer>

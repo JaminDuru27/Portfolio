@@ -4,6 +4,7 @@ import { Home } from './pages/home'
 import About from './pages/about'
 import Contact from './pages/contact'
 import Services from './pages/services'
+import { AnimatePresence } from 'framer-motion'
 function App() {
   const [theme, setTheme] = useState(`dark`)
 
@@ -17,12 +18,34 @@ function App() {
       {/* <Services theme={theme} setTheme={setTheme} /> */}
 
       <BrowserRouter>
-      <Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes>
         <Route
         path='/'
-        element={<></>}
+        element={
+        <Home theme={theme} setTheme={setTheme}/>
+        }
+        ></Route>
+        <Route
+        path='/About'
+        element={
+          <About theme={theme} setTheme={setTheme}/>
+        }
+        ></Route>
+        <Route
+        path='/Services'
+        element={
+          <Services theme={theme} setTheme={setTheme}/>
+        }
+        ></Route>
+        <Route
+        path='/Contact'
+        element={
+          <Contact theme={theme} setTheme={setTheme}/>
+        }
         ></Route>
       </Routes>
+      </AnimatePresence>
       </BrowserRouter>
     </div>
   )

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom"
 
 export function SideNav({toggle, theme}){
+    const nav = useNavigate()
     return (
         <motion.div 
         animate={{left:(toggle)?`0%`:null}}
@@ -12,10 +14,18 @@ export function SideNav({toggle, theme}){
             <div className="text-[.7rem] w-full text-center">Web Developer</div>
             <nav className="w-full py-2  mt-6 relative">
                 <li className=" flex flex-col w-full">
-                    <a href="/" className="w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Home</a>
-                    <a href="/" className="w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">About</a>
-                    <a href="/" className="w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Contact</a>
-                    <a href="/" className="w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Services</a>
+                    <div 
+                    onClick={()=>nav(`/`)}
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Home</div>
+                    <div 
+                    onClick={()=>nav(`/About`)}
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">About</div>
+                    <div 
+                    onClick={()=>nav(`/Contact`)}
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Contact</div>
+                    <div 
+                    onClick={()=>nav(`/Services`)}
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Services</div>
                 </li>
             </nav>
         </motion.div>
