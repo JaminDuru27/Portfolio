@@ -69,22 +69,24 @@ export default function Contact({theme, setTheme}) {
           <div className="space-y-8">
             <form ref={form} onSubmit={handleSubmit} className="space-y-6 rounded-2xl p-2 overflow-hidden  relative">
               
-              {sending ? (
-                <div className="w-full h-full absolute z-100 bg-white/10 backdrop-blur-2xl">
+                <motion.div
+                initial={{display:`none`, opacity:0}} 
+                animate={sending?{display:`block`, opacity:1}:null} 
+                className="w-full h-full absolute z-100 bg-white/10 backdrop-blur-2xl">
                   <motion.div 
                   initial={{translateX: `-50%`,translateY: `-50%`}}
                   animate={{translateX: `0%`,translateY: `0%`}}
-                  transition={{duration:1.6}}
+                  transition={{duration:2}}
                   className="absolute bg-yellow-400/20 w-full h-full top-[-50%] left-[-50%] rounded-2xl absolute"></motion.div>
                   <motion.div 
                   initial={{translateX: `50%`,translateY: `-100%`}}
                   animate={{translateX: `0%`,translateY: `0%`}} 
-                  transition={{duration:1.6}}
+                  transition={{duration:2}}
                   className="absolute bg-blue-400/20 w-full h-full top-[0%] right-[-50%] rounded-2xl absolute"></motion.div>
                   <motion.div
                   initial={{translateX: `-50%`,translateY: `50%`}}
                   animate={{translateX: `0%`,translateY: `0%`}}
-                  transition={{duration:1.6}}
+                  transition={{duration:2}}
                   className="absolute bg-emerald-400/20 w-full h-full top-[50%] left-[-50%] rounded-2xl absolute"></motion.div>
                   <motion.div 
                   animate={{
@@ -98,8 +100,7 @@ export default function Contact({theme, setTheme}) {
                   }}
                   style={{backdropFilter:`brightness(70)`}}
                   className="absolute w-30 h-30 top-4 left-4 rounded-full border-2 border-white/20"></motion.div>
-                </div>  
-              ):null}
+                </motion.div>  
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name

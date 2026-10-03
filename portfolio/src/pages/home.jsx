@@ -109,7 +109,7 @@ export function Home({theme, setTheme}){
             </div>
 
         </div>
-        <ImageCard1 src='/design1.png' bgsrc='/design-portfolio.jpg' head='Need a Professional Website? Look No Futher' text='I can create beautiful Uis just like this in no time!' />
+        <ImageCard1 src='/design1.png' bgsrc='/design-portfolio.jpg' head='Need a Professional Website? Look No Further' text='I can create beautiful Uis just like this in no time!' />
         <ImageCard1 src='/design2.png' bgsrc='/modeling-portfolio.jpg' head='Great UI/Ux designer' text='I can create beautiful Uis just like this in no time!' />
         <ImageCard1 src='/design3.png' bgsrc='/music-artist-portfolio.jpg' head='Loves His Work' text='I can create beautiful Uis just like this in no time!' />
         <ImageCard1 src='/design5.png' bgsrc='/beauty-cosmetics-portfolio.jpg' head='Worked In Many Fields' text='I can create beautiful Uis just like this in no time!' />
