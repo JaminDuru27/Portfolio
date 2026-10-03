@@ -27,7 +27,7 @@ export function Home({theme, setTheme}){
     useEffect(()=>{
         setTimeout(()=>{
             setOpen(true)
-        }, 3000)
+        }, 4000)
     }, [])
     if(!open){
         return <Intro theme={theme} open={open}/>
@@ -76,8 +76,8 @@ export function Home({theme, setTheme}){
                     className=" text-[.5rem] lg:text-[1.7rem] md:text-[1.2rem] sm:text-[.7rem] md:mt-2 w-[70%] ">
                         Im a  professional Web  Developer. I can create Modern UIs and Web Pages with the latest Web Frameworks
                     </div>
-                    <div className="flex md-gap-y-4 gap-x-2 items-center md:flex-col md:my-5 sm:my-1">
-                        <div className="links    lg:text-[3.6rem] md:text-[2.6rem] text-[1rem] text-black h-10  flex gap-x-2 items-center">
+                    <div className="flex w-fit  md:gap-y-2 gap-x-2 items-center md:flex-col md:my-5 sm:my-1">
+                        <div className="links  lg:text-[3.6rem] md:text-[2.6rem] text-[1rem] text-black h-10  flex gap-x-2 items-center">
                             <a href="mailto:durugermaine207@gmail.com">
                                 <MdOutlineEmail
                                 color={theme === `dark`?`white`:"black"}
@@ -102,7 +102,7 @@ export function Home({theme, setTheme}){
                             nav(`/services`)
                         }}
                         style={{boxShadow: `8px 9px 21px -10px cyan, -6px 5px 21px -10px orange, 2px -6px 21px -10px #6e05ef`}}
-                        className="p-2 text-[.7rem] w-fit cursor-pointer rounded">Services</a>
+                        className="p-2 text-[.7rem] w-full cursor-pointer rounded">Services</a>
                     
                     </div>
                 </div>

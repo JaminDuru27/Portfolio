@@ -10,14 +10,16 @@ export function Intro({theme, open}){
         transition={{duration:1}}
         className="bg-black flex w-full absolute z-[200] h-[100vh]  overflow-hidden  items-center justify-center">
                 <div className="flex w-full absolute h-full top-0 left-0">
-                     <Run theme={theme} dir={`down`}/>
-                     <Run theme={theme} dir={`up`}/>
-                     <Run theme={theme} dir={`down`}/>
-                     <Run theme={theme} dir={`up`}/>
+                    <Run theme={theme} dir={`down`}/>
+                     <div className="hidden lg:flex w-full">
+                        <Run theme={theme} dir={`up`}/>
+                        <Run theme={theme} dir={`down`}/>
+                        <Run theme={theme} dir={`up`}/>
+                     </div>
                 </div>                
                 <img 
                 src="design5.png" 
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-1/2 min-w-[400px] min-h-[400px] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 alt="" />
                 <div className="flex flex-col  p-2 backdrop-blur-2xl rounded-lg gap-x-2 items-center justify-center">
                     <motion.img 
@@ -30,7 +32,7 @@ export function Intro({theme, open}){
                     <motion.div 
                     initial={{display:`none`, width: 0, height: 0}}
                     animate={{display: `flex`,  width: `fit-content`, height: `fit-content`}}
-                    transition={{delay: 1}}
+                    transition={{delay: 2}}
                     className=" flex items-center text-white overflow-hidden gap-y-2 flex-col">
                         <div className="text-">@JaminDev</div>
                         <div className="">Build modern websites</div>
@@ -46,7 +48,7 @@ function Run ({theme, dir=`down`}){
         <motion.div 
         animate={{translateY: dir === `down`?-200: 200}}
         transition={{duration:10}}
-        className="w-1/3 h-full grid grid-cols-22 gap-2 relative top-[-200px] auto-rows-[40px] gap-1 p-2 [grid-auto-flow:dense] p-2">
+        className="w-full lg:w-1/3 h-full grid md:grid-cols-20 lg:grid-cols-22 gap-2 relative top-[-200px] auto-rows-[40px] gap-1 p-2 [grid-auto-flow:dense] p-2">
             {
                 (Array.from({length: 50}).map((_, index) => {
                     const delay = index * 0.02; // Delay for each square

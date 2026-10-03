@@ -4,7 +4,7 @@ import { TiAdjustBrightness } from "react-icons/ti";
 
 export function Nav({settogglesidebar, theme, setTheme}){
     return (
-        <div className={`${theme===`dark`?``:`border-2 border-[#727172]`} fixed overflow-hidden nav z-10 w-[80%] flex justify-between items-center left-1/2 translate-x-[-50%] top-2 backdrop-blur-2xl h-10 rounded-sm`}>
+        <div className={`${theme===`dark`?``:`border-2 border-[#727172]`} fixed overflow-hidden nav z-[120] w-[80%] flex justify-between items-center left-1/2 translate-x-[-50%] top-2 backdrop-blur-2xl h-10 rounded-sm`}>
         {
             theme !== `dark`?
             <img 
