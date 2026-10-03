@@ -61,7 +61,7 @@ export function Home({theme, setTheme}){
                         WebkitTextFillColor: `transparent`,
                     }}
                     className="boldfont logo text-[1rem]  lg:text-[3.5rem]  md:text-[2.5rem] mt-6 ">
-                        {"Hi im Germaine Duru".split("").map((char, i) => (
+                        {"Hi, I'm Germaine Duru".split("").map((char, i) => (
                             <motion.span key={i} variants={letter}>
                             {char}
                             </motion.span>

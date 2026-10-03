@@ -13,7 +13,16 @@ export function SideNav({toggle, theme}){
         transition={{type:`spring`, stiffness:50, }}
         style={{boxShadow: `0px 0px 12px -6px #000`}}
         className="backdrop-blur-[9px] md:hidden z-20 w-[10rem] flex justify-start  items-center flex-col p-6 py-10 h-[100vh] fixed top-1/2 translate-y-[-50%] left-[-100%]  rounded-sm">
-            <img src="/profile.jpg" alt="" className="w-20 h-20 rounded-[50%] outline-2 outline-[#ffffff1f] outline-offset-2 " /> 
+            {
+                theme !== `dark`?
+                <img 
+                src="/profile.jpeg" alt="" 
+                className="w-20 h-20 rounded-[50%] outline-2 outline-[#ffffff1f] outline-offset-2 " /> 
+                :
+                <img 
+                src="/profile_dark.jpeg" alt="" 
+                className="w-20 h-20 rounded-[50%] outline-2 outline-[#ffffff1f] outline-offset-2 " /> 
+            }
             <div className="logo w-full text-center text-[1.4rem] mt-3">Jamin</div>
             <div className="text-[.7rem] w-full text-center">Web Developer</div>
             <nav className="w-full py-2  mt-6 relative">
