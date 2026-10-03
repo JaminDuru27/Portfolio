@@ -106,14 +106,14 @@ export default function Contact({theme, setTheme}) {
                   Name
                 </label>
                 {/* <Input id="name" placeholder="Your name" className="bg-card border-border" required /> */}
-                <input required type="text" className="w-full full border-2 border-[#ee0995] rounded-lg text-[#fff] p-1" name="" id="" />
+                <input required type="text" className="w-full full border-2 border-[#ee0995] rounded-lg  p-1" name="" id="" />
 
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
                   Email
                 </label>
-                <input required type="email" className="w-full full border-2 border-[#ee0995] rounded-lg text-[#fff] p-1" name="" id="" />
+                <input required type="email" className="w-full full border-2 border-[#ee0995] rounded-lg  p-1" name="" id="" />
                 {/* <Input
                   id="email"
                   type="email"
@@ -127,14 +127,14 @@ export default function Contact({theme, setTheme}) {
                   Subject
                 </label>
                 {/* <Input id="subject" placeholder="Project inquiry" className="bg-card border-border" required /> */}
-                <input required type="input" className="w-full full border-2 border-[#ee0995] rounded-lg text-[#fff] p-1" name="" id="" />
+                <input required type="input" className="w-full full border-2 border-[#ee0995] rounded-lg  p-1" name="" id="" />
                 
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Message
                 </label>
-                <textarea name="" className="w-full max-h-[50vh] h-[25vh] full border-2 border-[#ee0995] rounded-lg text-[#fff] p-1" id=""></textarea>
+                <textarea name="" className="w-full max-h-[50vh] h-[25vh] full border-2 border-[#ee0995] rounded-lg  p-1" id=""></textarea>
                 {/* <Textarea
                   id="message"
                   placeholder="Tell me about your project..."

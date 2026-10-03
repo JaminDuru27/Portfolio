@@ -29,16 +29,20 @@ export function SideNav({toggle, theme}){
                 <li className=" flex flex-col w-full">
                     <div 
                     onClick={()=>nav(`/`)}
-                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Home</div>
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem] flex items-center gap-2"
+                    >{<FaHome/>}Home</div>
                     <div 
                     onClick={()=>nav(`/About`)}
-                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">About</div>
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem] flex items-center gap-2"
+                    >{<FaUser/>}About</div>
                     <div 
                     onClick={()=>nav(`/Contact`)}
-                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Contact</div>
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem] flex items-center gap-2"
+                    >{<FaPhone/>}Contact</div>
                     <div 
                     onClick={()=>nav(`/Services`)}
-                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Services</div>
+                    className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem] flex items-center gap-2"
+                    >{<FaLaptopCode/>}Services</div>
                 </li>
             </nav>
         </motion.div>

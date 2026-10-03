@@ -6,10 +6,11 @@ import { AnimatePresence, motion } from "framer-motion"
 
 export default function About({theme, setTheme}) {
   const skills = [
-    "React & Next.js",
-    "TypeScript",
+    "React & ViteJS",
+    "JavaScript",
+    "Tauri",
     "Node.js & Express",
-    "PostgreSQL & MongoDB",
+    "Supabase & MongoDB",
     "Tailwind CSS",
   ]
 
