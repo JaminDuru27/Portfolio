@@ -48,7 +48,7 @@ export function Home({theme, setTheme}){
                     src="/profile_dark.jpeg" alt="" 
                     className=" w-full h-full  rounded-lg border-2 border-[#ffffff69]  outline-offset-2 " /> 
                 }
-                <div className="absolute top-[60%] flex flex-col gap-y-6  left-4 w-[80%]  ">
+                <div className="absolute top-[60%] flex flex-col  lg:gap-y-6 md:gap-y-4  left-4 w-[80%]  ">
                     <motion.p 
                     transition={{duration:2}}
                     initial="hidden"  
@@ -60,7 +60,7 @@ export function Home({theme, setTheme}){
                         WebkitBackgroundClip: `text`,
                         WebkitTextFillColor: `transparent`,
                     }}
-                    className="boldfont logo  text-[3.5rem] mt-6 ">
+                    className="boldfont logo text-[1rem]  lg:text-[3.5rem]  md:text-[2.5rem] mt-6 ">
                         {"Hi im Germaine Duru".split("").map((char, i) => (
                             <motion.span key={i} variants={letter}>
                             {char}
@@ -73,36 +73,38 @@ export function Home({theme, setTheme}){
                         WebkitBackgroundClip: `text`,
                         WebkitTextFillColor: `transparent`,
                     }}
-                    className=" text-[1.7rem] mt-2 w-[70%] ">
+                    className=" text-[.5rem] lg:text-[1.7rem] md:text-[1.2rem] sm:text-[.7rem] md:mt-2 w-[70%] ">
                         Im a  professional Web  Developer. I can create Modern UIs and Web Pages with the latest Web Frameworks
                     </div>
-                    <div className="links text-[.6rem]  text-[3.6rem] text-black h-10 my-5  flex gap-x-2 items-center">
-                        <a href="mailto:durugermaine207@gmail.com">
-                            <MdOutlineEmail
+                    <div className="flex md-gap-y-4 gap-x-2 items-center md:flex-col md:my-5 sm:my-1">
+                        <div className="links    lg:text-[3.6rem] md:text-[2.6rem] text-[1rem] text-black h-10  flex gap-x-2 items-center">
+                            <a href="mailto:durugermaine207@gmail.com">
+                                <MdOutlineEmail
+                                color={theme === `dark`?`white`:"black"}
+                                className="cursor-pointer"
+                                />
+                            </a>
+                            <a href="https://github.com/JaminDuru27">
+                                <RiGithubLine
+                                color={theme === `dark`?`white`:"black"}
+                                className="cursor-pointer"
+                                />
+                            </a>
+                            <FaWhatsapp
+                            onClick={()=>{}}
                             color={theme === `dark`?`white`:"black"}
                             className="cursor-pointer"
                             />
-                        </a>
-                        <a href="https://github.com/JaminDuru27">
-                            <RiGithubLine
-                            color={theme === `dark`?`white`:"black"}
-                            className="cursor-pointer"
-                            />
-                        </a>
-                        <FaWhatsapp
-                        onClick={()=>{}}
-                        color={theme === `dark`?`white`:"black"}
-                        className="cursor-pointer"
-                        />
-                        
+                            
+                        </div>
+                        <a 
+                        onClick={()=>{
+                            nav(`/services`)
+                        }}
+                        style={{boxShadow: `8px 9px 21px -10px cyan, -6px 5px 21px -10px orange, 2px -6px 21px -10px #6e05ef`}}
+                        className="p-2 text-[.7rem] w-fit cursor-pointer rounded">Services</a>
+                    
                     </div>
-                    <a 
-                    onClick={()=>{
-                        nav(`/services`)
-                    }}
-                    style={{boxShadow: `8px 9px 21px -10px cyan, -6px 5px 21px -10px orange, 2px -6px 21px -10px #6e05ef`}}
-                    className="p-2 px-6 mt-10 text-[.7rem] w-fit cursor-pointer rounded">Services</a>
-                
                 </div>
             </div>
 
@@ -112,7 +114,7 @@ export function Home({theme, setTheme}){
         <ImageCard1 src='/design3.png' bgsrc='/music-artist-portfolio.jpg' head='Loves His Work' text='I can create beautiful Uis just like this in no time!' />
         <ImageCard1 src='/design5.png' bgsrc='/beauty-cosmetics-portfolio.jpg' head='Worked In Many Fields' text='I can create beautiful Uis just like this in no time!' />
         
-        <div className="flex text-[7rem] py-10 translate-x-[-50%] relative left-1/2 my-2 flex-wrap items-center w-[80%] justify-between gap-2">
+        <div className="flex text-[2rem]  md:text-[5rem] lg:text-[7rem] py-10 translate-x-[-50%] relative left-1/2 my-2 md:flex-wrap items-center w-[80%] justify-between gap-2">
                 <DiReact color={theme === `dark`?"#fff":`#000`}/>
                 <SiSupabase color={theme === `dark`?"#fff":`#000`}/>
                 <DiHtml5 color={theme === `dark`?"#fff":`#000`}/>
@@ -127,11 +129,11 @@ export function Home({theme, setTheme}){
             WebkitBackgroundClip: `text`,
             WebkitTextFillColor: `transparent`,
         }}
-        className="font-bold flex items-center flex-col gap-10 text-[4.8rem] border-t-2 border-b-2 border-white/20 py-20 my-10 w-[70%] translate-x-[-50%] text-center left-1/2 relative capitalize">
+        className="font-bold flex items-center flex-col gap-10 md:text-[2.8rem] text-[1.7rem] lg:text-[4.8rem] border-t-2 border-b-2 border-white/20 py-20 my-10 w-[70%] translate-x-[-50%] text-center left-1/2 relative capitalize">
             {<FaStar/>}
             
             Stylish Web Pages For You
-            <div className="text-[1.7rem] capitalize">get beautiful aesthetic websites</div>
+            <div className=" text-[.7rem] md:text-[1.2rem] lg:text-[1.7rem] capitalize">get beautiful aesthetic websites</div>
             {<FaStar/>}
         </div>
         

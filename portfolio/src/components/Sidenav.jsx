@@ -8,11 +8,11 @@ export function SideNav({toggle, theme}){
     return (
         <>
 
-        {/* <motion.div 
+        <motion.div 
         animate={{left:(toggle)?`0%`:null}}
         transition={{type:`spring`, stiffness:50, }}
         style={{boxShadow: `0px 0px 12px -6px #000`}}
-        className="backdrop-blur-[9px] z-20 w-[10rem] flex justify-start  items-center flex-col p-6 py-10 h-[100vh] fixed top-1/2 translate-y-[-50%] left-[-100%]  rounded-sm">
+        className="backdrop-blur-[9px] md:hidden z-20 w-[10rem] flex justify-start  items-center flex-col p-6 py-10 h-[100vh] fixed top-1/2 translate-y-[-50%] left-[-100%]  rounded-sm">
             <img src="/profile.jpg" alt="" className="w-20 h-20 rounded-[50%] outline-2 outline-[#ffffff1f] outline-offset-2 " /> 
             <div className="logo w-full text-center text-[1.4rem] mt-3">Jamin</div>
             <div className="text-[.7rem] w-full text-center">Web Developer</div>
@@ -32,8 +32,8 @@ export function SideNav({toggle, theme}){
                     className="cursor=pointer w-full p-2 border-2 rounded-sm border-[#ffffff27] backdrop-blur-[2px] mb-4 text-[.7rem]">Services</div>
                 </li>
             </nav>
-        </motion.div> */}
-        <div className="p-2 bg-[#ee0995]/10 rounded-lg flex-col bg-white/10 fixed z-[100] top-1/2 left-10 translate-y-[-50%] flex items-center gap-y-4">
+        </motion.div>
+        <div className="p-2 bg-[#ee0995]/10 hidden  md:flex  rounded-lg flex-col bg-white/10 fixed z-[100] top-1/2 left-10 translate-y-[-50%] flex items-center gap-y-4">
             {[
                 {icon:FaHome, url:`/`},
                 {icon:FaUser, url:`/About`},

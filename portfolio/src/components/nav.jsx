@@ -32,7 +32,7 @@ export function Nav({settogglesidebar, theme, setTheme}){
 
             }}/>
         </motion.div>
-        <RxHamburgerMenu color={(theme === `dark`)?`#fff`:`000`} size={18} className="cursor-pointer" onClick={()=>settogglesidebar(prev=>!prev)} />
+        <RxHamburgerMenu color={(theme === `dark`)?`#fff`:`000`} size={18} className="cursor-pointer md:hidden" onClick={()=>settogglesidebar(prev=>!prev)} />
         </div>
         </div>
     )

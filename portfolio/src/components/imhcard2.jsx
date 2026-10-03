@@ -23,8 +23,8 @@ export function ImageCard2({title, src}){
             bib.current.style.display = `none`
         }}
         
-        className="card w-[60vw] relative left-1/2 translate-x-[-50%] h-fit mb-8  rounded outline-2 outline-[#ffffff76] relative outline-offset-2">
-            <div className=" absolute text-black p-4 bg-white/10 backdrop-blur-2xl w-full p-4 animal text-[2.8rem]">{title}</div>
+        className="card  w-[60vw] relative left-1/2 translate-x-[-50%] h-fit mb-8  rounded outline-2 outline-[#ffffff76] relative outline-offset-2">
+            <div className=" absolute text-black p-4 bg-white/10 backdrop-blur-2xl w-full p-4 animal text-[1.2rem] md:text-[1.8rem] lg:text-[2.8rem]">{title}</div>
             <img src={src} 
             ref={pic}
              className="w-full h-full rounded-sm" alt="" />
