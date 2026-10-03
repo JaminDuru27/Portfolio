@@ -1,34 +1,45 @@
-"use client"
-
-// import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Nav } from "../components/nav"
 import { SideNav } from "../components/Sidenav"
 import { FaWhatsapp } from "react-icons/fa"
+import { motion } from "framer-motion"
+import emailjs from '@emailjs/browser'
 
-// import { useState, type FormEvent } from "react"
 export default function Contact({theme, setTheme}) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
-
-  // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
-  //   setIsSubmitting(true)
-  //   // Simulate form submission
-  //   await new Promise((resolve) => setTimeout(resolve, 1000))
-  //   setIsSubmitting(false)
-  //   setSubmitted(true)
-  //   setTimeout(() => setSubmitted(false), 3000)
-  // }
-  const handleSubmit = ()=>{}
+  const [sending, setSending] = useState(false) 
+  const [message, setMessage] = useState(``) 
+  const form = useRef()
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    setSending(true)
+    setMessage(`sending...`)
+    emailjs
+    .sendForm(
+      import.meta.env.VITE_EmailJS_SERVICEID,
+      import.meta.env.VITE_EmailJS_TemplateID,
+      form.current,
+      { publicKey: import.meta.env.VITE_EmailJS_PublicKey }
+    )
+    .then(
+      () => {
+        setMessage("Sent!");
+        setSending(false);
+        form.current.reset();
+      },
+    )
+    .catch(e=>{
+      setMessage("Failed, try again");setSending(false)
+      console.log(e.message)
+    })
+    ;
+  }
   const socialLinks = [
     { icon: Github, href: "https://github.com/JaminDuru27", label: "GitHub", },
     { icon: FaWhatsapp, label: "WhatsApp" },
   ]
-
   const contactInfo = [
     { icon: Mail, label: "Email", value: "jaminduru5@gmail.com", cb: ()=>{} },
     { icon: Phone, label: "Phone", value: "+2347072773050" },
@@ -52,17 +63,49 @@ export default function Contact({theme, setTheme}) {
             Have a project in mind? Let's collaborate and create something amazing together.
           </p>
         </div>
-
+        <div className="w-full capitalize text-[#ee0995]">{message}</div>
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="space-y-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-6 rounded-2xl p-2 overflow-hidden  relative">
+              
+              {sending ? (
+                <div className="w-full h-full absolute z-100 bg-white/10 backdrop-blur-2xl">
+                  <motion.div 
+                  initial={{translateX: `-50%`,translateY: `-50%`}}
+                  animate={{translateX: `0%`,translateY: `0%`}}
+                  transition={{duration:1.6}}
+                  className="absolute bg-yellow-400/20 w-full h-full top-[-50%] left-[-50%] rounded-2xl absolute"></motion.div>
+                  <motion.div 
+                  initial={{translateX: `50%`,translateY: `-100%`}}
+                  animate={{translateX: `0%`,translateY: `0%`}} 
+                  transition={{duration:1.6}}
+                  className="absolute bg-blue-400/20 w-full h-full top-[0%] right-[-50%] rounded-2xl absolute"></motion.div>
+                  <motion.div
+                  initial={{translateX: `-50%`,translateY: `50%`}}
+                  animate={{translateX: `0%`,translateY: `0%`}}
+                  transition={{duration:1.6}}
+                  className="absolute bg-emerald-400/20 w-full h-full top-[50%] left-[-50%] rounded-2xl absolute"></motion.div>
+                  <motion.div 
+                  animate={{
+                    left: [0, `60%`, 0, 0], 
+                    top: [0, 0, `60%`, 0], 
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    left: {duration: 1, repeat:Infinity},
+                    top: {delay: 1, repeat:Infinity}
+                  }}
+                  style={{backdropFilter:`brightness(70)`}}
+                  className="absolute w-30 h-30 top-4 left-4 rounded-full border-2 border-white/20"></motion.div>
+                </div>  
+              ):null}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Name
                 </label>
                 {/* <Input id="name" placeholder="Your name" className="bg-card border-border" required /> */}
-                <input required type="email" className="w-full full border-2 border-[#ee0995] rounded-lg text-[#fff] p-1" name="" id="" />
+                <input required type="text" className="w-full full border-2 border-[#ee0995] rounded-lg text-[#fff] p-1" name="" id="" />
 
               </div>
               <div>
