@@ -24,14 +24,12 @@ export function ImageCard2({title, src}){
         }}
         
         className="card w-[60vw] relative left-1/2 translate-x-[-50%] h-fit mb-8  rounded outline-2 outline-[#ffffff76] relative outline-offset-2">
+            <div className=" absolute text-black p-4 bg-white/10 backdrop-blur-2xl w-full p-4 animal text-[2.8rem]">{title}</div>
             <img src={src} 
             ref={pic}
              className="w-full h-full rounded-sm" alt="" />
-            <div className="  backdrop-blur-2xl w-fill h-fit  my-4 pb-5 text-center capitalize">
-                <h1>{title}</h1>
-            </div>
             <div 
-            style={{backdropFilter: effectref.current}}
+            style={{backdropFilter: effectref.current, filter:`url(#bulge)`}}
             ref={bib}
             className="z-[1] circle w-50 h-50 absolute border-2 border-[#ffffff28] rounded-[50%] top-0 left-0"></div>
         </motion.div>

@@ -6,7 +6,7 @@ export function ImageCard3({title, src, tags=[], text, theme}){
                 <h1 className="text-2xl text-center md:text-left">{title}</h1>
                 <h2 className={`text-[.7rem] opacity-[.8]`}>{text}
                 </h2>   
-                <div className="tags my-5 flex text-[.5rem] gap-2 md:w-full md:justify-start uppercase">
+                <div className="tags my-5 flex flex-wrap text-[.5rem] gap-2 md:w-full md:justify-start uppercase">
                     {tags.map((tag, x)=>(
                         <div key={x} className={`${theme === `dark`?`border-[#fff]`:`border-[#000]`} p-2 border-2  rounded-sm `}>#{tag}</div>
                     ))}

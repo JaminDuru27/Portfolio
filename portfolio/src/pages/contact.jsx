@@ -25,15 +25,14 @@ export default function Contact({theme, setTheme}) {
   // }
   const handleSubmit = ()=>{}
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: FaWhatsapp, href: "#", label: "WhatsApp" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Github, href: "https://github.com/JaminDuru27", label: "GitHub", },
+    { icon: FaWhatsapp, label: "WhatsApp" },
   ]
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "hello@durugermaine.dev" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-    { icon: MapPin, label: "Location", value: "San Francisco, CA" },
+    { icon: Mail, label: "Email", value: "jaminduru5@gmail.com", cb: ()=>{} },
+    { icon: Phone, label: "Phone", value: "+2347072773050" },
+    { icon: MapPin, label: "Location", value: "Rivers State, Nigeria" },
   ]
   let [togglesidebar, settogglesidebar] = useState(false)
 
@@ -138,7 +137,8 @@ export default function Contact({theme, setTheme}) {
                   return (
                     <a
                       key={i}
-                      href={link.href}
+                      href={link?.href}
+                      target="_blank"
                       className="p-3 bg-card border border-border border-[#ee0996a3] bg-[#ee099623] rounded-lg hover:bg-primary/10 hover:border-primary/50 transition-all"
                       aria-label={link.label}
                     >

@@ -10,8 +10,23 @@
     font-family: logofont;
     src: url(/babang/Babang.otf);
 }
+@font-face {
+    font-family: animal;
+    src: url(/animal_chariot/Animal Chariot.ttf);
+}
 *{
-    font-family: geoform
+    font-family: geoform;
+    user-select: none;
+}
+body{
+    background-color: black;
+    overflow-x: hidden;
+}
+.babang{
+    font-family: babang;
+}
+.animal{
+    font-family: animal;
 }
 .boldfont{
     font-family: geoformbold
